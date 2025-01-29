@@ -30,3 +30,14 @@ resource "github_repository" "github" {
   vulnerability_alerts        = true
   visibility = "public"
 }
+
+
+resource "github_repository" "tester" {
+  name          = "tester"
+  description   = "Github provisioner repo"
+  has_downloads = true
+  has_issues    = true
+  has_projects  = true
+  vulnerability_alerts        = true
+  visibility = "public"
+}

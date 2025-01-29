@@ -12,7 +12,7 @@ env:
   GITHUB_APP_PEM_FILE: ${{secrets.PEM}}
 
 jobs: 
-  pull_request:
+  main_merge:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

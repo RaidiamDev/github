@@ -4,16 +4,26 @@ name: "Terraform Pull Request"
 on:
   pull_request:
 
+env:
+  GITHUB_APP_ID: ${{secrets.APPID}}
+  GITHUB_APP_INSTALLATION_ID: ${{secrets.INSTALLATION_ID}}
+  GITHUB_APP_PEM_FILE: ${{secrets.PEM}}
+
 jobs: 
   pull_request:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
       - name: Terrform Install
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: "1.1.7"
+      
+      - name: Terrform Init
+        run: terraform init 
+      
       - name: Terrform Plan
-        run: terraform init
+        run: 'terraform plan'
 

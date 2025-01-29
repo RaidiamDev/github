@@ -28,6 +28,5 @@ resource "github_repository" "github" {
   has_issues    = true
   has_projects  = true
   vulnerability_alerts        = true
-
   visibility = "public"
 }
